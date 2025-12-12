@@ -1,0 +1,209 @@
+/* ===== 전역 리셋 및 기본 설정 ===== */
+* {
+    margin: 0; /* 모든 요소의 기본 마진 제거 */
+    padding: 0; /* 모든 요소의 기본 패딩 제거 */
+    box-sizing: border-box; /* 패딩과 보더를 width에 포함 */
+}
+
+/* 기본 폰트 및 배경색 설정 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6; /* 줄 간격 */
+    color: #ffffff; /* 기본 텍스트 색상 (흰색) */
+    background-color: #000000; /* 바디 배경색 (검은색) */
+}
+
+/* ===== 헤더 스타일 ===== */
+.site-header {
+    background-color: #ffffff; /* 헤더 배경색 (흰색) */
+    color: #000000; /* 헤더 텍스트 색상 (검은색) */
+    padding: 1rem 2rem; /* 상하 1rem, 좌우 2rem 패딩 */
+    position: sticky; /* 스크롤 시 상단에 고정 */
+    top: 0; /* 상단에서 0 위치에 고정 */
+    z-index: 1000; /* 다른 요소들 위에 표시 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 효과 */
+}
+
+.header-container {
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    display: flex; /* Flexbox 레이아웃 */
+    justify-content: space-between; /* 양 끝 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+/* 사이트 로고/제목 스타일 */
+.site-logo {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #000000; /* 텍스트 색상 */
+}
+
+.site-logo h1 {
+    font-size: 1.5rem; /* 폰트 크기 */
+    font-weight: 700; /* 폰트 굵기 */
+}
+
+/* 네비게이션 메뉴 스타일 */
+.site-nav ul {
+    list-style: none; /* 리스트 마커 제거 */
+    display: flex; /* 가로 배치 */
+    gap: 2rem; /* 메뉴 항목 간 간격 */
+}
+
+.site-nav a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #000000; /* 링크 색상 */
+    font-weight: 500; /* 폰트 굵기 */
+    transition: color 0.3s ease; /* 색상 변화 애니메이션 */
+}
+
+.site-nav a:hover {
+    color: #666666; /* 마우스 오버 시 색상 변경 */
+}
+
+/* ===== 메인 콘텐츠 영역 ===== */
+main {
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 3rem 2rem; /* 상하 3rem, 좌우 2rem 패딩 */
+    min-height: calc(100vh - 200px); /* 최소 높이 (푸터를 하단에 고정하기 위함) */
+}
+
+/* ===== 푸터 스타일 ===== */
+.site-footer {
+    background-color: #ffffff; /* 푸터 배경색 (흰색) */
+    color: #000000; /* 푸터 텍스트 색상 (검은색) */
+    padding: 2rem; /* 패딩 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.footer-container {
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.social-links {
+    margin-top: 1rem; /* 상단 여백 */
+}
+
+.social-links a {
+    color: #000000; /* 링크 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    margin: 0 0.5rem; /* 좌우 여백 */
+    transition: opacity 0.3s ease; /* 투명도 변화 애니메이션 */
+}
+
+.social-links a:hover {
+    opacity: 0.7; /* 마우스 오버 시 투명도 변경 */
+}
+
+/* ===== 반응형 디자인 (모바일) ===== */
+@media (max-width: 768px) {
+    /* 768px 이하 화면 (태블릿, 모바일)에서 적용 */
+    
+    .header-container {
+        flex-direction: column; /* 세로 배치 */
+        gap: 1rem; /* 요소 간 간격 */
+    }
+    
+    .site-nav ul {
+        flex-direction: column; /* 메뉴를 세로로 배치 */
+        gap: 0.5rem; /* 메뉴 항목 간 간격 축소 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+    
+    main {
+        padding: 2rem 1rem; /* 모바일에서 패딩 축소 */
+    }
+}
+
+/* ===== 블로그 포스트 목록 스타일 ===== */
+.post-list {
+    list-style: none; /* 리스트 마커 제거 */
+}
+
+.post-list li {
+    margin-bottom: 2rem; /* 포스트 항목 간 간격 */
+    padding-bottom: 2rem; /* 하단 패딩 */
+    border-bottom: 1px solid #333333; /* 구분선 */
+}
+
+.post-list li:last-child {
+    border-bottom: none; /* 마지막 항목은 구분선 제거 */
+}
+
+.post-title {
+    font-size: 1.5rem; /* 제목 크기 */
+    margin-bottom: 0.5rem; /* 하단 여백 */
+}
+
+.post-title a {
+    color: #ffffff; /* 링크 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.post-title a:hover {
+    color: #cccccc; /* 마우스 오버 시 색상 변경 */
+}
+
+.post-meta {
+    color: #999999; /* 메타 정보 색상 (날짜 등) */
+    font-size: 0.9rem; /* 폰트 크기 */
+    margin-bottom: 0.5rem; /* 하단 여백 */
+}
+
+.post-excerpt {
+    color: #cccccc; /* 발췌문 색상 */
+}
+
+/* ===== 개별 포스트 스타일 ===== */
+.post-content {
+    line-height: 1.8; /* 줄 간격 */
+}
+
+.post-content h2,
+.post-content h3 {
+    margin-top: 2rem; /* 제목 상단 여백 */
+    margin-bottom: 1rem; /* 제목 하단 여백 */
+    color: #ffffff; /* 제목 색상 */
+}
+
+.post-content p {
+    margin-bottom: 1rem; /* 단락 하단 여백 */
+}
+
+.post-content a {
+    color: #66b3ff; /* 링크 색상 (파란색 계열) */
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.post-content a:hover {
+    text-decoration: underline; /* 마우스 오버 시 밑줄 */
+}
+
+/* 코드 블록 스타일 */
+.post-content code {
+    background-color: #1a1a1a; /* 코드 배경색 */
+    padding: 0.2rem 0.4rem; /* 패딩 */
+    border-radius: 3px; /* 모서리 둥글게 */
+    font-family: 'Courier New', monospace; /* 고정폭 폰트 */
+}
+
+.post-content pre {
+    background-color: #1a1a1a; /* 코드 블록 배경색 */
+    padding: 1rem; /* 패딩 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    overflow-x: auto; /* 가로 스크롤 */
+    margin-bottom: 1rem; /* 하단 여백 */
+}
+
+/* ===== 댓글 섹션 ===== */
+.comments {
+    margin-top: 3rem; /* 상단 여백 */
+    padding-top: 2rem; /* 상단 패딩 */
+    border-top: 1px solid #333333; /* 상단 구분선 */
+}
+
+.comments h2 {
+    margin-bottom: 1rem; /* 하단 여백 */
+}

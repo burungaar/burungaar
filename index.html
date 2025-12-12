@@ -1,0 +1,51 @@
+---
+layout: default
+title: 홈
+---
+<!-- 홈페이지: 사이트의 첫 화면 -->
+
+<div class="home">
+    <!-- 히어로 섹션 (메인 비주얼) -->
+    <section class="hero">
+        <h1>{{ site.title }}에 오신 것을 환영합니다</h1>
+        <p>{{ site.description }}</p>
+        <!-- CTA 버튼 (Call To Action) -->
+        <a href="{{ '/about' | relative_url }}" class="btn-primary">회사 소개 보기</a>
+    </section>
+    
+    <!-- 최근 개발 소식 -->
+    <section class="recent-updates">
+        <h2>최근 개발 소식</h2>
+        <ul class="post-list">
+            <!-- dev-updates 컬렉션에서 최근 3개 포스트 가져오기 -->
+            {% for post in site.dev-updates limit:3 %}
+            <li>
+                <h3 class="post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                <div class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
+                <p class="post-excerpt">{{ post.excerpt }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ '/dev-updates' | relative_url }}">모든 개발 소식 보기 →</a>
+    </section>
+    
+    <!-- 최근 지식 전달 -->
+    <section class="recent-knowledge">
+        <h2>최근 지식 전달</h2>
+        <ul class="post-list">
+            <!-- knowledge 컬렉션에서 최근 3개 포스트 가져오기 -->
+            {% for post in site.knowledge limit:3 %}
+            <li>
+                <h3 class="post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                <div class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
+                <p class="post-excerpt">{{ post.excerpt }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ '/knowledge' | relative_url }}">모든 지식 전달 보기 →</a>
+    </section>
+</div>

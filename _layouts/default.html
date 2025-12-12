@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩 및 뷰포트 설정 (반응형 웹을 위한 필수 설정) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 페이지 제목: site.title은 _config.yml에서 정의한 사이트 이름 -->
+    <!-- page.title은 각 페이지의 Front Matter에서 정의한 제목 -->
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    
+    <!-- CSS 파일 로드 -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <!-- 페이지 설명 (SEO를 위한 메타 태그) -->
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+</head>
+<body>
+    <!-- 헤더 include: _includes/header.html 파일을 불러옴 -->
+    {% include header.html %}
+    
+    <!-- 메인 콘텐츠 영역: 각 페이지의 실제 내용이 여기에 들어감 -->
+    <main>
+        {{ content }}
+    </main>
+    
+    <!-- 푸터 include: _includes/footer.html 파일을 불러옴 -->
+    {% include footer.html %}
+    
+    <!-- JavaScript 파일 로드 (페이지 하단에 로드해서 렌더링 속도 향상) -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

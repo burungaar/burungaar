@@ -1,0 +1,19 @@
+<!-- Utterances 댓글 시스템 -->
+<!-- GitHub Issues를 댓글로 사용 -->
+{% if page.comments %}
+<div class="comments">
+    <h2>댓글</h2>
+    <script src="https://utteranc.es/client.js"
+            repo="your-github-username/your-repo-name"
+            issue-term="pathname"
+            theme="github-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <!-- 
+    repo: 네 GitHub 저장소 (username/repository 형식)
+    issue-term: 어떤 방식으로 이슈를 생성할지 (pathname은 페이지 경로를 이슈 제목으로 사용)
+    theme: 댓글 창 테마 (github-dark는 어두운 테마, github-light는 밝은 테마)
+    -->
+</div>
+{% endif %}

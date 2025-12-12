@@ -1,0 +1,21 @@
+---
+layout: page
+title: 지식 전달
+---
+<!-- 지식 전달 목록 페이지 -->
+
+<ul class="post-list">
+    <!-- knowledge 컬렉션의 모든 포스트를 날짜 역순으로 나열 -->
+    {% for post in site.knowledge reversed %}
+    <li>
+        <h2 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <div class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
+        <p class="post-excerpt">
+            {{ post.excerpt }}
+        </p>
+        <a href="{{ post.url | relative_url }}">더 읽기 →</a>
+    </li>
+    {% endfor %}
+</ul>

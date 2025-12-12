@@ -1,0 +1,32 @@
+<!-- 헤더 영역: 모든 페이지 상단에 표시됨 -->
+<header class="site-header">
+    <!-- 로고 및 사이트 제목 -->
+    <div class="header-container">
+        <!-- 홈페이지로 가는 링크 -->
+        <a href="{{ '/' | relative_url }}" class="site-logo">
+            <!-- 로고 이미지가 있으면 여기에 추가 -->
+            <!-- <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}"> -->
+            <h1>{{ site.title }}</h1>
+        </a>
+        
+        <!-- 네비게이션 메뉴 -->
+        <nav class="site-nav">
+            <ul>
+                <!-- 홈 -->
+                <li><a href="{{ '/' | relative_url }}">홈</a></li>
+                
+                <!-- 회사 소개 -->
+                <li><a href="{{ '/about' | relative_url }}">회사 소개</a></li>
+                
+                <!-- 개발 소식 -->
+                <li><a href="{{ '/dev-updates' | relative_url }}">개발 소식</a></li>
+                
+                <!-- 지식 전달 -->
+                <li><a href="{{ '/knowledge' | relative_url }}">지식 전달</a></li>
+                
+                <!-- 연락처 -->
+                <li><a href="{{ '/contact' | relative_url }}">연락처</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

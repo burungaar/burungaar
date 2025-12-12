@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<!-- 포스트 레이아웃: 블로그 글에 사용 -->
+
+<article class="post">
+    <!-- 포스트 헤더 -->
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <!-- 메타 정보: 날짜, 카테고리 등 -->
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%Y년 %m월 %d일" }}
+            </time>
+            {% if page.author %}
+                <span> · {{ page.author }}</span>
+            {% endif %}
+        </div>
+    </header>
+    
+    <!-- 포스트 본문 -->
+    <div class="post-content">
+        {{ content }}
+    </div>
+    
+    <!-- 댓글 섹션 include -->
+    {% include comments.html %}
+</article>
